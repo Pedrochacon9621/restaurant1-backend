@@ -1,0 +1,54 @@
+# 🐍 Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+
+# 📦 Virtual environment
+venv/
+ENV/
+env/
+*.env
+
+# 🗄️ SQLite database
+db.sqlite3
+*.db
+
+# 📁 Django media/uploads
+/media/
+*.bak
+*.tmp
+
+# 🧪 Test artifacts
+.coverage
+htmlcov/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# 🔧 IDE/editor configs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# 🧾 Backup files
+respaldo.json
+
+# 📄 OS-specific
+.DS_Store
+Thumbs.db
+
+# 🔐 Secrets (optional, if you use .env for secrets)
+.env
+.env.*
+
+# 🚀 Deployment
+*.log
+staticfiles/
