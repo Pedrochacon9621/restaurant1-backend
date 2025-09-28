@@ -46,6 +46,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'restaurant1App1',
+    'cloudinary_storage',
+    'cloudinary',
+
 ]
 
 MIDDLEWARE = [
@@ -141,9 +144,20 @@ CSRF_TRUSTED_ORIGINS = [
 ] #para las cookies PROTECCION PARA SOLO ACEPTAR SOLICITUDES DE LOS DOMINIOS AGREGADOS
 
 
-# Declaraciones para las imagenes de las tablas de BD REQUIEREN PAQUETE Pillow
-MEDIA_URL = '/media/' #Es la URL pública que usará el navegador para acceder a las imágenes.
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #Es la carpeta en tu proyecto donde se guardarán los archivos subidos.
+# Declaraciones para las imagenes de las tablas de BD REQUIEREN PAQUETE Pillow - EN LOCAL--------------
+#MEDIA_URL = '/media/' #Es la URL pública que usará el navegador para acceder a las imágenes.
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #Es la carpeta en tu proyecto donde se guardarán los archivos subidos.
+#CONFIGURACION DE CLOUDINARY PARA IMAGENES EN LA NUBE--------------------------------------------------------------------------
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
+}
+
+MEDIA_URL = 'https://res.cloudinary.com/%s/' % os.getenv('CLOUDINARY_CLOUD_NAME')
+#CONFIGURACION DE CLOUDINARY PARA IMAGENES EN LA NUBE--------------------------------------------------------------------------
 
 AUTH_USER_MODEL = 'restaurant1App1.UsuarioPersonalizado' # Especificando modelo de usuario extendido
 
