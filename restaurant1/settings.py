@@ -32,7 +32,7 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'https://light-jeanie-pedrochacon9621-e6fddc30.koyeb.app',
+    'light-jeanie-pedrochacon9621-e6fddc30.koyeb.app/',
 ] #colocar el dominio donde esta alojado
 
 
