@@ -31,7 +31,9 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [] #colocar el dominio donde esta alojado
+ALLOWED_HOSTS = [
+    'https://light-jeanie-pedrochacon9621-e6fddc30.koyeb.app',
+] #colocar el dominio donde esta alojado
 
 
 # Application definition
