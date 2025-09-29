@@ -14,7 +14,7 @@ class ProductosSerializer(serializers.ModelSerializer):
         fields = '__all__'
     def get_img_prod(self, obj):
         if obj.img_prod:
-            return f"https://res.cloudinary.com/doWellExur/{obj.img_prod.name}"
+            return f"https://res.cloudinary.com/do1we5kur/{obj.img_prod.name}"
         return None
 
 class RolSerializer(serializers.ModelSerializer):
