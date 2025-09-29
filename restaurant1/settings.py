@@ -140,11 +140,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "https://formulario-product1.vercel.app",
+    "https://restaurant1-frontend.vercel.app",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
     "https://formulario-product1.vercel.app",
+    "https://restaurant1-frontend.vercel.app",
 ] #para las cookies PROTECCION PARA SOLO ACEPTAR SOLICITUDES DE LOS DOMINIOS AGREGADOS
 
 
