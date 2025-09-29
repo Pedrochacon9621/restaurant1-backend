@@ -8,9 +8,15 @@ class CategoriasSerializer(serializers.ModelSerializer):
         model = Categorias
         fields = '__all__'
 class ProductosSerializer(serializers.ModelSerializer):
+    img_prod = serializers.SerializerMethodField()
     class Meta:
         model =  Productos
         fields = '__all__'
+    def get_img_prod(self, obj):
+        if obj.img_prod:
+            return f"https://res.cloudinary.com/doWellExur/{obj.img_prod.name}"
+        return None
+
 class RolSerializer(serializers.ModelSerializer):
     class Meta:
         model=Rol
