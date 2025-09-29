@@ -160,7 +160,7 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
 }
 
-MEDIA_URL = 'https://res.cloudinary.com/%s/' % os.getenv('CLOUDINARY_CLOUD_NAME')
+MEDIA_URL = f'https://res.cloudinary.com/{os.getenv("CLOUDINARY_CLOUD_NAME")}/'
 #CONFIGURACION DE CLOUDINARY PARA IMAGENES EN LA NUBE--------------------------------------------------------------------------
 
 AUTH_USER_MODEL = 'restaurant1App1.UsuarioPersonalizado' # Especificando modelo de usuario extendido
