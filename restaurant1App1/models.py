@@ -15,7 +15,7 @@ class Productos(models.Model):
     id_prod = models.AutoField(primary_key=True)
     nombre_prod = models.CharField(max_length=100)
     #img_prod = models.ImageField(upload_to='productos/', blank=True, null=True)
-    img_prod = CloudinaryField('image', blank=True, null=True)
+    img_prod = CloudinaryField('image', folder='restaurant1App1/productos', blank=True, null=True)
     descripcion_prod = models.TextField()
     precio_prod = models.DecimalField(max_digits=10, decimal_places=2)
     categoria_prod = models.ForeignKey(Categorias, on_delete=models.SET_NULL, null=True, related_name='productos') # no se elimina el producto, y related_name para hacer consulta con relacion ORM.
