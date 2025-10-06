@@ -33,6 +33,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'restaurant1-backend-ppiv.onrender.com',
+    'restaurant1-backend-1.vercel.app',
     #'light-jeanie-pedrochacon9621-e6fddc30.koyeb.app',
 ] #colocar el dominio donde esta alojado
 
