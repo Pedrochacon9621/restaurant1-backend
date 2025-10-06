@@ -33,7 +33,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'restaurant1-backend-ppiv.onrender.com',
-    'restaurant1-backend-1.vercel.app',
     #'light-jeanie-pedrochacon9621-e6fddc30.koyeb.app',
 ] #colocar el dominio donde esta alojado
 
@@ -83,7 +82,7 @@ TEMPLATES = [
     },
 ]
 
-ASGI_APPLICATION = "restaurant1.asgi.application" #PARA DESPLIEGUE EN VERCEL
+#ASGI_APPLICATION = "restaurant1.asgi.application" #PARA DESPLIEGUE EN VERCEL
 
 WSGI_APPLICATION = 'restaurant1.wsgi.application'
 
