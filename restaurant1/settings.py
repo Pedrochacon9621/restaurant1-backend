@@ -32,7 +32,8 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'light-jeanie-pedrochacon9621-e6fddc30.koyeb.app',
+    'restaurant1-backend-ppiv.onrender.com',
+    #'light-jeanie-pedrochacon9621-e6fddc30.koyeb.app',
 ] #colocar el dominio donde esta alojado
 
 
