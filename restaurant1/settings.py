@@ -84,6 +84,7 @@ TEMPLATES = [
 
 #ASGI_APPLICATION = "restaurant1.asgi.application" #PARA DESPLIEGUE EN VERCEL
 
+#WSGI_APPLICATION = 'restaurant1.wsgi.application' #luego de probar vercel devolver
 WSGI_APPLICATION = 'restaurant1.wsgi.application'
 
 
