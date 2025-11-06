@@ -22,6 +22,7 @@ class CategoriasView(viewsets.ModelViewSet):
 class ProductosView(viewsets.ModelViewSet):
     serializer_class = ProductosSerializer
     queryset = Productos.objects.all()
+    filterset_fields = ['categoria_prod', 'precio_prod', 'nombre_prod']
     def get_permissions(self):
         if self.action in ['list', 'retrieve']:
             return [AllowAny()] #todos pueden consultar
