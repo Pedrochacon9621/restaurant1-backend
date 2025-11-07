@@ -6,6 +6,9 @@ from .serializer import ProductosSerializer, CategoriasSerializer, ProductosCatS
 from .models import Productos, Categorias, UsuarioPersonalizado, Rol
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from .permissions import IsAdmin
+from .filters import ProductoFilter
+
+
 
 # Create your views here.
 
@@ -22,7 +25,7 @@ class CategoriasView(viewsets.ModelViewSet):
 class ProductosView(viewsets.ModelViewSet):
     serializer_class = ProductosSerializer
     queryset = Productos.objects.all()
-    filterset_fields = ['categoria_prod', 'precio_prod', 'nombre_prod']
+    filterset_class = ProductoFilter
     def get_permissions(self):
         if self.action in ['list', 'retrieve']:
             return [AllowAny()] #todos pueden consultar
