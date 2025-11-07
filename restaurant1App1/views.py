@@ -46,6 +46,7 @@ class UsuarioPersonalizadoView(viewsets.ModelViewSet):
 class ProductosCatView(viewsets.ModelViewSet):
     serializer_class = ProductosCatSerializer
     queryset = Productos.objects.all()
+    filterset_class = ProductoFilter
     def get_permissions(self):
         if self.action in ['list', 'retrieve']:
             return [AllowAny()] #todos pueden consultar
