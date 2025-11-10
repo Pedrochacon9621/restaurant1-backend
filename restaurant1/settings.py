@@ -32,6 +32,7 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    'localhost',
     'restaurant1-backend.vercel.app',
     'restaurant1-backend-ppiv.onrender.com',
     #'light-jeanie-pedrochacon9621-e6fddc30.koyeb.app',
