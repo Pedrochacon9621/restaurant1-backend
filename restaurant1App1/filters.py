@@ -24,10 +24,16 @@ class ProductoFilter(django_filters.FilterSet):
         }
 
 class CategoriaFilter(django_filters.FilterSet):
+    busqueda = busqueda = django_filters.CharFilter(method='buscar_categoria')
+    def buscar_categoria(self, queryset, name, value):
+        return queryset.filter(
+            Q(nombre_cat__icontains=value) |
+            Q(descripcion_cat__icontains=value)
+        )
     class Meta:
         model = Categorias
         fields = {
-            'nombre_cat' : ['exact', 'icontains'],
+            'nombre_cat' : ['exact'],
         }
 
 class UsuarioFilter(django_filters.FilterSet):
