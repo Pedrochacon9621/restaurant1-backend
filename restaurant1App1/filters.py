@@ -34,6 +34,7 @@ class CategoriaFilter(django_filters.FilterSet):
         model = Categorias
         fields = {
             'nombre_cat' : ['exact'],
+            'descripcion_cat': ['exact'],
         }
 
 class UsuarioFilter(django_filters.FilterSet):
