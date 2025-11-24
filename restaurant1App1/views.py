@@ -6,7 +6,7 @@ from .serializer import ProductosSerializer, CategoriasSerializer, ProductosCatS
 from .models import Productos, Categorias, UsuarioPersonalizado, Rol
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from .permissions import IsAdmin
-from .filters import ProductoFilter
+from .filters import ProductoFilter, CategoriaFilter, UsuarioFilter
 
 
 
@@ -15,6 +15,7 @@ from .filters import ProductoFilter
 class CategoriasView(viewsets.ModelViewSet):
     serializer_class = CategoriasSerializer
     queryset = Categorias.objects.all()
+    filterset_class = CategoriaFilter
     def get_permissions(self):
         if self.action in ['list', 'retrieve']:
             return [AllowAny()] #todos pueden consultar
@@ -41,6 +42,7 @@ class RolView(viewsets.ModelViewSet):
 class UsuarioPersonalizadoView(viewsets.ModelViewSet):
     serializer_class = UsuarioPersonalizadoSerializer
     queryset = UsuarioPersonalizado.objects.all()
+    filterset_class = UsuarioFilter
     permission_classes = [IsAuthenticated, IsAdmin]
 
 class ProductosCatView(viewsets.ModelViewSet):
@@ -57,6 +59,7 @@ class ProductosCatView(viewsets.ModelViewSet):
 class UsuarioPersonalizadoRolView(viewsets.ModelViewSet):
     serializer_class = UsuarioPersonalizadoRolSerializer
     queryset = UsuarioPersonalizado.objects.all()
+    filterset_class = UsuarioFilter
     permission_classes = [IsAuthenticated, IsAdmin]
 
 #Clase para verificar datos del usuario logeado:

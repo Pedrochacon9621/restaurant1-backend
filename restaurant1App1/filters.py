@@ -1,5 +1,5 @@
 import django_filters
-from .models import Productos
+from .models import Productos, Categorias, UsuarioPersonalizado
 from django.db.models import Q
 
 
@@ -21,4 +21,27 @@ class ProductoFilter(django_filters.FilterSet):
             
             # 💡 ¡La clave! Habilitar todos los lookups de rango para 'precio_prod'
             'precio_prod': ['exact', 'lte', 'gte', 'lt', 'gt'], 
+        }
+
+class CategoriaFilter(django_filters.FilterSet):
+    class Meta:
+        model = Categorias
+        fields = {
+            'nombre_cat' : ['exact', 'icontains'],
+        }
+
+class UsuarioFilter(django_filters.FilterSet):
+    busqueda = busqueda = django_filters.CharFilter(method='buscar_user')
+    def buscar_user(self, queryset, name, value):
+        return queryset.filter(
+            Q(username__icontains=value) |
+            Q(first_name__icontains=value) |
+            Q(last_name__icontains=value)
+        )
+    class Meta:
+        model = UsuarioPersonalizado
+        fields = {
+            'username' : ['exact'],
+            'first_name' : ['exact'],
+            'last_name' : ['exact'],
         }
