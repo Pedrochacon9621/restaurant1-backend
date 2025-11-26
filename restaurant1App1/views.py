@@ -14,7 +14,7 @@ from .filters import ProductoFilter, CategoriaFilter, UsuarioFilter
 
 class CategoriasView(viewsets.ModelViewSet):
     serializer_class = CategoriasSerializer
-    queryset = Categorias.objects.all()
+    queryset = Categorias.objects.all().order_by('id_cat')
     filterset_class = CategoriaFilter
     def get_permissions(self):
         if self.action in ['list', 'retrieve']:
@@ -36,12 +36,12 @@ class ProductosView(viewsets.ModelViewSet):
 
 class RolView(viewsets.ModelViewSet):
     serializer_class = RolSerializer
-    queryset = Rol.objects.all()
+    queryset = Rol.objects.all().order_by('id_rol')
     permission_classes = [IsAuthenticated, IsAdmin]
 
 class UsuarioPersonalizadoView(viewsets.ModelViewSet):
     serializer_class = UsuarioPersonalizadoSerializer
-    queryset = UsuarioPersonalizado.objects.all()
+    queryset = UsuarioPersonalizado.objects.all().order_by('id')
     filterset_class = UsuarioFilter
     permission_classes = [IsAuthenticated, IsAdmin]
 
@@ -58,7 +58,7 @@ class ProductosCatView(viewsets.ModelViewSet):
     
 class UsuarioPersonalizadoRolView(viewsets.ModelViewSet):
     serializer_class = UsuarioPersonalizadoRolSerializer
-    queryset = UsuarioPersonalizado.objects.all()
+    queryset = UsuarioPersonalizado.objects.all().order_by('id')
     filterset_class = UsuarioFilter
     permission_classes = [IsAuthenticated, IsAdmin]
 
