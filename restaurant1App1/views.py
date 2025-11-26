@@ -25,7 +25,7 @@ class CategoriasView(viewsets.ModelViewSet):
 
 class ProductosView(viewsets.ModelViewSet):
     serializer_class = ProductosSerializer
-    queryset = Productos.objects.all()
+    queryset = Productos.objects.all().order_by('id_prod')
     filterset_class = ProductoFilter
     def get_permissions(self):
         if self.action in ['list', 'retrieve']:
@@ -47,7 +47,7 @@ class UsuarioPersonalizadoView(viewsets.ModelViewSet):
 
 class ProductosCatView(viewsets.ModelViewSet):
     serializer_class = ProductosCatSerializer
-    queryset = Productos.objects.all()
+    queryset = Productos.objects.all().order_by('id_prod')
     filterset_class = ProductoFilter
     def get_permissions(self):
         if self.action in ['list', 'retrieve']:
